@@ -12,6 +12,8 @@ private let reuseIdentifier = "Cell"
 
 class BucketListCollectionViewController: UICollectionViewController {
 
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -9,6 +9,10 @@
 import UIKit
 
 class SignInViewController: UIViewController {
+    
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,5 +30,11 @@ class SignInViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func signInButtonTapped(_ sender: Any) {
+    }
+    @IBAction func signUpButtonTapped(_ sender: Any) {
+    }
+    
+    
 
 }
