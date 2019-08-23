@@ -10,6 +10,11 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var enterDestinationLabel: UITextField!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var journalEntriesTextView: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,4 +32,6 @@ class DetailViewController: UIViewController {
     }
     */
 
+    @IBAction func markCompleteButtonTapped(_ sender: Any) {
+    }
 }

@@ -10,4 +10,8 @@ import UIKit
 
 class TripCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var tripImageView: UIImageView!
+    @IBOutlet weak var tripTitleLabel: UILabel!
+    @IBOutlet weak var tripDescriptionLabel: UILabel!
+    
 }
