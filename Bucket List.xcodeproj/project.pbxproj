@@ -18,6 +18,9 @@
 		D67D9A16230CF5A900DF9C0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67D9A14230CF5A900DF9C0C /* Main.storyboard */; };
 		D67D9A18230CF5AA00DF9C0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D67D9A17230CF5AA00DF9C0C /* Assets.xcassets */; };
 		D67D9A1B230CF5AA00DF9C0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67D9A19230CF5AA00DF9C0C /* LaunchScreen.storyboard */; };
+		D6AFBA26230F773900C86174 /* BucketListClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AFBA25230F773900C86174 /* BucketListClient.swift */; };
+		D6AFBA31230F87BE00C86174 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AFBA30230F87BE00C86174 /* Token.swift */; };
+		D6AFBA33230F8D3600C86174 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AFBA32230F8D3600C86174 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		D67D9A17230CF5AA00DF9C0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D67D9A1A230CF5AA00DF9C0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D67D9A1C230CF5AA00DF9C0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6AFBA25230F773900C86174 /* BucketListClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListClient.swift; sourceTree = "<group>"; };
+		D6AFBA30230F87BE00C86174 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		D6AFBA32230F8D3600C86174 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +83,9 @@
 				D67D9A10230CF5A900DF9C0C /* AppDelegate.swift */,
 				D67D9A25230CF5F800DF9C0C /* Models */,
 				D67D9A26230CF5FE00DF9C0C /* Model Controllers */,
-				D67D9A24230CF5DD00DF9C0C /* View Controllers */,
+				D6AFBA24230F73E200C86174 /* Networking */,
 				37A04E8D230E3D0C00B5C6EA /* Views */,
+				D67D9A24230CF5DD00DF9C0C /* View Controllers */,
 				D67D9A23230CF5D500DF9C0C /* Storyboards */,
 				D67D9A22230CF5C700DF9C0C /* Resources */,
 			);
@@ -118,7 +125,8 @@
 		D67D9A25230CF5F800DF9C0C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				37A04E94230F77CC00B5C6EA /* Trip.swift */,
+				D6AFBA30230F87BE00C86174 /* Token.swift */,
+				D6AFBA32230F8D3600C86174 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -128,6 +136,14 @@
 			children = (
 			);
 			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		D6AFBA24230F73E200C86174 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D6AFBA25230F773900C86174 /* BucketListClient.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,10 +218,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				37A04E97230F92B200B5C6EA /* SignInViewController.swift in Sources */,
-				37A04E95230F77CC00B5C6EA /* Trip.swift in Sources */,
 				37A04E99230F92C300B5C6EA /* SignUpViewController.swift in Sources */,
+				D6AFBA31230F87BE00C86174 /* Token.swift in Sources */,
+				D6AFBA26230F773900C86174 /* BucketListClient.swift in Sources */,
 				37A04E8F230E3D2F00B5C6EA /* DetailViewController.swift in Sources */,
 				37A04E8C230E34A600B5C6EA /* BucketListCollectionViewController.swift in Sources */,
+				D6AFBA33230F8D3600C86174 /* User.swift in Sources */,
 				37A04E91230E3D4E00B5C6EA /* ShareViewController.swift in Sources */,
 				37A04E93230E3D6F00B5C6EA /* TripCollectionViewCell.swift in Sources */,
 				D67D9A11230CF5A900DF9C0C /* AppDelegate.swift in Sources */,
