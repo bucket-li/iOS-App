@@ -88,6 +88,7 @@
                         <viewLayoutGuide key="safeArea" id="KYX-qp-QNT"/>
                     </view>
                     <connections>
+                        <outlet property="confirmPasswordTextField" destination="UQG-Z3-qrN" id="WoV-qO-RPV"/>
                         <outlet property="emailAddressTextField" destination="g13-p7-Tap" id="Z6L-FS-hLd"/>
                         <outlet property="nameTextField" destination="0fH-Ia-FeF" id="l8I-dG-M0o"/>
                         <outlet property="newPasswordTextField" destination="UKG-zB-ZJq" id="ONu-Fc-9Wo"/>
