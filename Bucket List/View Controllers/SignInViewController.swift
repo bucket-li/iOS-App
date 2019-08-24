@@ -10,6 +10,8 @@ import UIKit
 
 class SignInViewController: UIViewController {
     
+    var bucketListClient: BucketListClient?
+    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -31,9 +33,24 @@ class SignInViewController: UIViewController {
     }
     */
     @IBAction func signInButtonTapped(_ sender: Any) {
+        guard let bucketListClient = self.bucketListClient else { return }
+        
+        if let username = self.usernameTextField.text, !username.isEmpty,
+            let password = self.passwordTextField.text, !password.isEmpty {
+            let user = User(username: username, password: password)
+            bucketListClient.signIn(with: user) { (error) in
+                if let error = error {
+                    NSLog("Error occurred during sign in: \(error)")
+                } else {
+                    DispatchQueue.main.async {
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }
+            }
+        }
     }
-    @IBAction func signUpButtonTapped(_ sender: Any) {
-    }
+    
+    
     
     
 

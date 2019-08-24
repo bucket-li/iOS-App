@@ -13,9 +13,14 @@ private let reuseIdentifier = "Cell"
 class BucketListCollectionViewController: UICollectionViewController {
 
 
+    var bucketListClient = BucketListClient()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if bucketListClient.token == nil {
+            performSegue(withIdentifier: "signInModalSegue", sender: self)
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -26,15 +31,16 @@ class BucketListCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "signInModalSegue" {
+            guard let loginVC = segue.destination as? SignInViewController else { return }
+            loginVC.bucketListClient = self.bucketListClient
+        }
     }
-    */
+ 
 
     // MARK: UICollectionViewDataSource
 
