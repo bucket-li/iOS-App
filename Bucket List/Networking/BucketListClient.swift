@@ -129,4 +129,68 @@ class BucketListClient {
             }
         }.resume()
     }
+    
+    func fetchLoggedInUser(completion: @escaping (Result<User, NetworkError>) -> Void) {
+        guard let token = self.token else { completion(.failure(.noAuth)); return }
+        
+        let requestURL = baseURL.appendingPathComponent("api/user")
+        
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = HTTPMethod.get.rawValue
+        request.addValue("USER_TOKEN \(token.token)", forHTTPHeaderField: "Authorization")
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let response = response as? HTTPURLResponse,
+                response.statusCode == 401 {
+                completion(.failure(.badAuth))
+                return
+            }
+            
+            if let _ = error { completion(.failure(.otherError)); return }
+            guard let data = data else { completion(.failure(.badData)); return }
+            
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .secondsSince1970
+            do {
+                let user = try decoder.decode(User.self, from: data)
+                completion(.success(user))
+            } catch {
+                NSLog("Error decoding users object: \(error)")
+                completion(.failure(.noDecode))
+                return
+            }
+        }.resume()
+    }
+    
+    func fetchUser(withId id: Int16, completion: @escaping (Result<User, NetworkError>) -> Void) {
+        guard let token = self.token else { completion(.failure(.noAuth)); return }
+        
+        let requestURL = baseURL.appendingPathComponent("api/user/\(id)")
+        
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = HTTPMethod.get.rawValue
+        request.addValue("USER_TOKEN \(token.token)", forHTTPHeaderField: "Authorization")
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let response = response as? HTTPURLResponse,
+                response.statusCode == 401 {
+                completion(.failure(.badAuth))
+                return
+            }
+            
+            if let _ = error { completion(.failure(.otherError)); return }
+            guard let data = data else { completion(.failure(.badData)); return }
+            
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .secondsSince1970
+            do {
+                let user = try decoder.decode(User.self, from: data)
+                completion(.success(user))
+            } catch {
+                NSLog("Error decoding users object: \(error)")
+                completion(.failure(.noDecode))
+                return
+            }
+        }.resume()
+    }
 }
