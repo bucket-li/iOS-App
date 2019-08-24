@@ -33,7 +33,7 @@
 		37A04E92230E3D6F00B5C6EA /* TripCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCollectionViewCell.swift; sourceTree = "<group>"; };
 		37A04E96230F92B200B5C6EA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		37A04E98230F92C300B5C6EA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		D67D9A0D230CF5A900DF9C0C /* Bucket List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bucket List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D67D9A0D230CF5A900DF9C0C /* LambdaBucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LambdaBucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D67D9A10230CF5A900DF9C0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D67D9A15230CF5A900DF9C0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D67D9A17230CF5AA00DF9C0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 		D67D9A0E230CF5A900DF9C0C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D67D9A0D230CF5A900DF9C0C /* Bucket List.app */,
+				D67D9A0D230CF5A900DF9C0C /* LambdaBucketList.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,9 +151,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D67D9A0C230CF5A900DF9C0C /* Bucket List */ = {
+		D67D9A0C230CF5A900DF9C0C /* LambdaBucketList */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D67D9A1F230CF5AA00DF9C0C /* Build configuration list for PBXNativeTarget "Bucket List" */;
+			buildConfigurationList = D67D9A1F230CF5AA00DF9C0C /* Build configuration list for PBXNativeTarget "LambdaBucketList" */;
 			buildPhases = (
 				D67D9A09230CF5A900DF9C0C /* Sources */,
 				D67D9A0A230CF5A900DF9C0C /* Frameworks */,
@@ -163,9 +163,9 @@
 			);
 			dependencies = (
 			);
-			name = "Bucket List";
+			name = LambdaBucketList;
 			productName = "Bucket List";
-			productReference = D67D9A0D230CF5A900DF9C0C /* Bucket List.app */;
+			productReference = D67D9A0D230CF5A900DF9C0C /* LambdaBucketList.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -183,7 +183,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D67D9A08230CF5A900DF9C0C /* Build configuration list for PBXProject "Bucket List" */;
+			buildConfigurationList = D67D9A08230CF5A900DF9C0C /* Build configuration list for PBXProject "LambdaBucketList" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -196,7 +196,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D67D9A0C230CF5A900DF9C0C /* Bucket List */,
+				D67D9A0C230CF5A900DF9C0C /* LambdaBucketList */,
 			);
 		};
 /* End PBXProject section */
@@ -429,7 +429,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D67D9A08230CF5A900DF9C0C /* Build configuration list for PBXProject "Bucket List" */ = {
+		D67D9A08230CF5A900DF9C0C /* Build configuration list for PBXProject "LambdaBucketList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D67D9A1D230CF5AA00DF9C0C /* Debug */,
@@ -438,7 +438,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D67D9A1F230CF5AA00DF9C0C /* Build configuration list for PBXNativeTarget "Bucket List" */ = {
+		D67D9A1F230CF5AA00DF9C0C /* Build configuration list for PBXNativeTarget "LambdaBucketList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D67D9A20230CF5AA00DF9C0C /* Debug */,
