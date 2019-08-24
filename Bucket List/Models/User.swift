@@ -9,7 +9,7 @@
 import Foundation
 
 struct User: Equatable, Codable {
-    var id: Int16
+    var id: String
     var name: String
     var email: String
     var password: String

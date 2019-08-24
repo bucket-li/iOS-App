@@ -11,7 +11,6 @@
 		37A04E8F230E3D2F00B5C6EA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A04E8E230E3D2F00B5C6EA /* DetailViewController.swift */; };
 		37A04E91230E3D4E00B5C6EA /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A04E90230E3D4E00B5C6EA /* ShareViewController.swift */; };
 		37A04E93230E3D6F00B5C6EA /* TripCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A04E92230E3D6F00B5C6EA /* TripCollectionViewCell.swift */; };
-		37A04E95230F77CC00B5C6EA /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A04E94230F77CC00B5C6EA /* Trip.swift */; };
 		37A04E97230F92B200B5C6EA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A04E96230F92B200B5C6EA /* SignInViewController.swift */; };
 		37A04E99230F92C300B5C6EA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A04E98230F92C300B5C6EA /* SignUpViewController.swift */; };
 		D67D9A11230CF5A900DF9C0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67D9A10230CF5A900DF9C0C /* AppDelegate.swift */; };
@@ -21,6 +20,10 @@
 		D6AFBA26230F773900C86174 /* BucketListClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AFBA25230F773900C86174 /* BucketListClient.swift */; };
 		D6AFBA31230F87BE00C86174 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AFBA30230F87BE00C86174 /* Token.swift */; };
 		D6AFBA33230F8D3600C86174 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AFBA32230F8D3600C86174 /* User.swift */; };
+		D6AFBA382311B4A900C86174 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6AFBA362311B4A900C86174 /* SignIn.storyboard */; };
+		D6AFBA3A2311B4C300C86174 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6AFBA392311B4C300C86174 /* SignUp.storyboard */; };
+		D6AFBA3D2311B55700C86174 /* Share.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6AFBA3B2311B55700C86174 /* Share.storyboard */; };
+		D6AFBA3F2311B58900C86174 /* DetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6AFBA3E2311B58900C86174 /* DetailView.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +31,6 @@
 		37A04E8E230E3D2F00B5C6EA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		37A04E90230E3D4E00B5C6EA /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		37A04E92230E3D6F00B5C6EA /* TripCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCollectionViewCell.swift; sourceTree = "<group>"; };
-		37A04E94230F77CC00B5C6EA /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Trip.swift; path = "Bucket List/Views/Trip.swift"; sourceTree = SOURCE_ROOT; };
 		37A04E96230F92B200B5C6EA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		37A04E98230F92C300B5C6EA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D67D9A0D230CF5A900DF9C0C /* Bucket List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bucket List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +42,10 @@
 		D6AFBA25230F773900C86174 /* BucketListClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListClient.swift; sourceTree = "<group>"; };
 		D6AFBA30230F87BE00C86174 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		D6AFBA32230F8D3600C86174 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D6AFBA372311B4A900C86174 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Bucket List/Storyboards/Base.lproj/SignIn.storyboard"; sourceTree = "<group>"; };
+		D6AFBA392311B4C300C86174 /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		D6AFBA3C2311B55700C86174 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Bucket List/Storyboards/Base.lproj/Share.storyboard"; sourceTree = "<group>"; };
+		D6AFBA3E2311B58900C86174 /* DetailView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailView.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +88,6 @@
 			children = (
 				D67D9A10230CF5A900DF9C0C /* AppDelegate.swift */,
 				D67D9A25230CF5F800DF9C0C /* Models */,
-				D67D9A26230CF5FE00DF9C0C /* Model Controllers */,
 				D6AFBA24230F73E200C86174 /* Networking */,
 				37A04E8D230E3D0C00B5C6EA /* Views */,
 				D67D9A24230CF5DD00DF9C0C /* View Controllers */,
@@ -104,7 +109,11 @@
 		D67D9A23230CF5D500DF9C0C /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				D6AFBA392311B4C300C86174 /* SignUp.storyboard */,
+				D6AFBA362311B4A900C86174 /* SignIn.storyboard */,
 				D67D9A14230CF5A900DF9C0C /* Main.storyboard */,
+				D6AFBA3E2311B58900C86174 /* DetailView.storyboard */,
+				D6AFBA3B2311B55700C86174 /* Share.storyboard */,
 				D67D9A19230CF5AA00DF9C0C /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -129,13 +138,6 @@
 				D6AFBA32230F8D3600C86174 /* User.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		D67D9A26230CF5FE00DF9C0C /* Model Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 		D6AFBA24230F73E200C86174 /* Networking */ = {
@@ -204,9 +206,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6AFBA382311B4A900C86174 /* SignIn.storyboard in Resources */,
 				D67D9A1B230CF5AA00DF9C0C /* LaunchScreen.storyboard in Resources */,
+				D6AFBA3F2311B58900C86174 /* DetailView.storyboard in Resources */,
+				D6AFBA3D2311B55700C86174 /* Share.storyboard in Resources */,
 				D67D9A18230CF5AA00DF9C0C /* Assets.xcassets in Resources */,
 				D67D9A16230CF5A900DF9C0C /* Main.storyboard in Resources */,
+				D6AFBA3A2311B4C300C86174 /* SignUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +253,22 @@
 				D67D9A1A230CF5AA00DF9C0C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D6AFBA362311B4A900C86174 /* SignIn.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D6AFBA372311B4A900C86174 /* Base */,
+			);
+			name = SignIn.storyboard;
+			sourceTree = "<group>";
+		};
+		D6AFBA3B2311B55700C86174 /* Share.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D6AFBA3C2311B55700C86174 /* Base */,
+			);
+			name = Share.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

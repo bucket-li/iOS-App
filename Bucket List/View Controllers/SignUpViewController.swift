@@ -14,7 +14,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailAddressTextField: UITextField!
     @IBOutlet weak var newPasswordTextField: UITextField!
     
-    
+    var bucketListClient: BucketListClient?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +33,25 @@ class SignUpViewController: UIViewController {
     }
     */
     @IBAction func registerButtonTapped(_ sender: Any) {
+        guard let blClient = self.bucketListClient,
+            let name = self.nameTextField.text, !name.isEmpty,
+            let email = self.emailAddressTextField.text, !email.isEmpty,
+            let password = self.newPasswordTextField.text, !password.isEmpty else { return }
+        
+        let newUser = blClient.createUser(withName: name, withEmail: email, withPassword: password)
+        blClient.register(with: newUser, completion: { (error) in
+            if let error = error {
+                NSLog("Error registering user: \(error)")
+                DispatchQueue.main.async {
+                    let alertController = UIAlertController(title: "Error", message: "Error registering user: \(error)", preferredStyle: .alert)
+                    let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    alertController.addAction(alertAction)
+                    self.present(alertController, animated: true)
+                }
+                
+                return
+            }
+        })
     }
     
 }

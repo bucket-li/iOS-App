@@ -21,7 +21,7 @@ class BucketListCollectionViewController: UICollectionViewController {
         if bucketListClient.token == nil {
             performSegue(withIdentifier: "signInModalSegue", sender: self)
         }
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

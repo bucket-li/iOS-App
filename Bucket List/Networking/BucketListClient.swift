@@ -30,6 +30,13 @@ class BucketListClient {
     private (set) var users: [User] = []
     var token: Token?
     
+    func createUser(withId id: String = UUID().uuidString, withName name: String, withEmail email: String, withPassword password: String,
+                    withCreatedDate created: Date = Date()) -> User {
+        let user = User(id: id, name: name, email: email, password: password, created: created)
+        self.users.append(user)
+        return user
+    }
+    
     func register(with user: User, completion: @escaping CompletionHandler = { _ in }) {
         let registerURL = baseURL.appendingPathComponent("api/register")
         

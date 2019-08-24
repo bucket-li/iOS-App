@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -76,7 +77,7 @@
                                     <outlet property="tripDescriptionLabel" destination="3Us-Gf-VED" id="gLF-n9-GIo"/>
                                     <outlet property="tripImageView" destination="Krq-XY-OOB" id="J2Y-xn-CRB"/>
                                     <outlet property="tripTitleLabel" destination="Cgi-aK-S4L" id="9fb-Ba-DCT"/>
-                                    <segue destination="PbL-wq-tsS" kind="presentation" identifier="EditBucketListTripModalSegue" id="9ye-Np-wjh"/>
+                                    <segue destination="VU6-W0-OVx" kind="presentation" identifier="EditBucketListTripModalSegue" id="9ye-Np-wjh"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -88,7 +89,7 @@
                     <navigationItem key="navigationItem" title="Bucket List" id="q7F-Pi-YE7">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="XVs-dQ-Y8P">
                             <connections>
-                                <segue destination="PbL-wq-tsS" kind="presentation" identifier="AddBucketListTripModalSegue" id="EFV-8u-pMY"/>
+                                <segue destination="VU6-W0-OVx" kind="presentation" identifier="AddBucketListTripModalSegue" id="EFV-8u-pMY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -99,6 +100,88 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H1j-rb-qJh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1560.8695652173915" y="-242.41071428571428"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="gy2-BB-est">
+            <objects>
+                <viewController id="VU6-W0-OVx" customClass="DetailViewController" customModule="Bucket_List" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="egj-Jx-Lqz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4D-T0-oh2">
+                                <rect key="frame" x="16" y="802" width="382" height="30"/>
+                                <state key="normal" title="Mark Complete"/>
+                                <connections>
+                                    <action selector="markCompleteButtonTapped:" destination="VU6-W0-OVx" eventType="touchUpInside" id="8Al-oT-6dc"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8e4-1p-MpQ">
+                                <rect key="frame" x="16" y="60" width="382" height="702"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter destination:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lxY-vm-lhg">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UfM-Em-rSh">
+                                        <rect key="frame" x="0.0" y="38" width="382" height="64"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="BUo-tF-nAs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="248" text="Journal Entries:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="I3L-Ty-opI">
+                                        <rect key="frame" x="0.0" y="110" width="382" height="368"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KIb-4U-i31">
+                                        <rect key="frame" x="0.0" y="486" width="382" height="216"/>
+                                    </pickerView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="I3L-Ty-opI" firstAttribute="top" secondItem="UfM-Em-rSh" secondAttribute="bottom" constant="8" id="1cZ-l4-MqB"/>
+                                    <constraint firstItem="UfM-Em-rSh" firstAttribute="top" secondItem="lxY-vm-lhg" secondAttribute="bottom" constant="8" id="fCb-G8-Rp6"/>
+                                    <constraint firstItem="KIb-4U-i31" firstAttribute="top" secondItem="I3L-Ty-opI" secondAttribute="bottom" constant="8" id="u7w-Ap-iGD"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="p1V-Jb-XLt" firstAttribute="trailing" secondItem="8e4-1p-MpQ" secondAttribute="trailing" constant="16" id="AoV-Rt-88P"/>
+                            <constraint firstItem="V4D-T0-oh2" firstAttribute="leading" secondItem="p1V-Jb-XLt" secondAttribute="leading" constant="16" id="YcM-52-rps"/>
+                            <constraint firstItem="8e4-1p-MpQ" firstAttribute="leading" secondItem="p1V-Jb-XLt" secondAttribute="leading" constant="16" id="cta-k0-0h1"/>
+                            <constraint firstItem="p1V-Jb-XLt" firstAttribute="trailing" secondItem="V4D-T0-oh2" secondAttribute="trailing" constant="16" id="jD9-Sa-Md9"/>
+                            <constraint firstItem="p1V-Jb-XLt" firstAttribute="bottom" secondItem="V4D-T0-oh2" secondAttribute="bottom" constant="30" id="kST-g5-cbv"/>
+                            <constraint firstItem="8e4-1p-MpQ" firstAttribute="top" secondItem="p1V-Jb-XLt" secondAttribute="top" constant="16" id="qAs-dc-uqU"/>
+                            <constraint firstItem="p1V-Jb-XLt" firstAttribute="bottom" secondItem="8e4-1p-MpQ" secondAttribute="bottom" constant="100" id="sBO-l8-8CX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="p1V-Jb-XLt"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="bO6-4r-VbA">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="save" id="Izg-YC-xYT"/>
+                            <barButtonItem title="Share" id="k56-h5-qsR">
+                                <connections>
+                                    <segue destination="WUy-0z-S5J" kind="show" identifier="ShareBucketListTripSegue" id="Xwy-lH-UlI"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="UfM-Em-rSh" id="kMl-Ao-eI6"/>
+                        <outlet property="enterDestinationLabel" destination="lxY-vm-lhg" id="OJd-Gh-Fef"/>
+                        <outlet property="journalEntriesTextView" destination="I3L-Ty-opI" id="cpC-D7-LZO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jeh-Zo-TNP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2405.7971014492755" y="-242.41071428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QtU-iZ-lAk">
@@ -116,7 +199,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t9a-2S-htC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="738" y="-242"/>
+            <point key="canvasLocation" x="650.72463768115949" y="-242.41071428571428"/>
         </scene>
         <!--SignIn-->
         <scene sceneID="7Lw-dk-8Pe">
@@ -124,7 +207,7 @@
                 <viewControllerPlaceholder storyboardName="SignIn" id="qAg-oH-V0S" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="koI-VF-eeH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2157" y="-276"/>
+            <point key="canvasLocation" x="2406" y="-929"/>
         </scene>
         <!--SignUp-->
         <scene sceneID="eF7-UW-l11">
@@ -132,7 +215,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="UIViewController-QhX-1y-FZz" storyboardName="SignUp" id="omo-iV-CMT" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nm3-Jh-mfD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2364" y="-276"/>
+            <point key="canvasLocation" x="3271" y="-929"/>
         </scene>
         <!--Share-->
         <scene sceneID="oHb-Br-sMj">
@@ -140,18 +223,10 @@
                 <viewControllerPlaceholder storyboardName="Share" id="WUy-0z-S5J" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gQ7-Va-HuF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2368" y="-227"/>
-        </scene>
-        <!--DetailView-->
-        <scene sceneID="2SZ-DQ-13o">
-            <objects>
-                <viewControllerPlaceholder storyboardName="DetailView" id="PbL-wq-tsS" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E9M-V3-8Im" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2138" y="-227"/>
+            <point key="canvasLocation" x="3271.0144927536235" y="-242.41071428571428"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9ye-Np-wjh"/>
+        <segue reference="EFV-8u-pMY"/>
     </inferredMetricsTieBreakers>
 </document>
