@@ -9,14 +9,9 @@
 import Foundation
 
 struct User: Equatable, Codable {
-    static func == (lhs: User, rhs: User) -> Bool {
-        return lhs.id == rhs.id
-    }
-    
     var id: Int16
     var name: String
     var email: String
     var password: String
     var created: Date
-    var token: Token?
 }
