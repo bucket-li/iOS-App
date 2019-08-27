@@ -33,8 +33,7 @@ class SignUpViewController: UIViewController {
             }
         }
         
-        let newUser = blClient.createUser(withName: name, withEmail: email, withPassword: password)
-        blClient.register(with: newUser, completion: { (error) in
+        blClient.register(withName: name, withEmail: email, withPassword: password, completion: { (error) in
             if let error = error {
                 NSLog("Error registering user: \(error)")
                 DispatchQueue.main.async {

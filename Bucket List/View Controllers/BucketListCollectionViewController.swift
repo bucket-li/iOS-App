@@ -12,8 +12,8 @@ private let reuseIdentifier = "Cell"
 
 class BucketListCollectionViewController: UICollectionViewController {
 
-
     var bucketListClient = BucketListClient()
+    var users: [User] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,14 +21,19 @@ class BucketListCollectionViewController: UICollectionViewController {
         if bucketListClient.token == nil {
             performSegue(withIdentifier: "signInModalSegue", sender: self)
         }
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.bucketListClient.fetchAllUsers { (result) in
+            if let users = try? result.get() {
+                self.users = users.users
+            }
+        }
     }
 
     

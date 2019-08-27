@@ -9,9 +9,8 @@
 import Foundation
 
 struct User: Equatable, Codable {
-    var id: String
+    var id: Int
     var name: String
     var email: String
-    var password: String
-    var created: Date
+    var created: String
 }

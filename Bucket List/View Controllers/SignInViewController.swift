@@ -12,7 +12,7 @@ class SignInViewController: UIViewController {
     
     var bucketListClient: BucketListClient?
     
-    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
 
@@ -29,28 +29,26 @@ class SignInViewController: UIViewController {
         guard let blClient = self.bucketListClient else { return }
         
         if segue.identifier == "signUpSegue" {
-            let signUpVC = segue.destination as? SignUpViewController
-            signUpVC?.bucketListClient = blClient
+            guard let signUpVC = segue.destination as? SignUpViewController else { return }
+            signUpVC.bucketListClient = blClient
         }
     }
  
     @IBAction func signInButtonTapped(_ sender: Any) {
-        guard let bucketListClient = self.bucketListClient else { return }
+        guard let blClient = self.bucketListClient else { return }
         
-        if let username = self.usernameTextField.text, !username.isEmpty,
+        if let email = self.emailTextField.text, !email.isEmpty,
             let password = self.passwordTextField.text, !password.isEmpty {
             
-            //
-            
-//            bucketListClient.signIn(with: user) { (error) in
-//                if let error = error {
-//                    NSLog("Error occurred during sign in: \(error)")
-//                } else {
-//                    DispatchQueue.main.async {
-//                        self.dismiss(animated: true, completion: nil)
-//                    }
-//                }
-//            }
+            blClient.login(withEmail: email, withPassword: password) { (error) in
+                if let error = error {
+                    NSLog("Error occurred during sign in: \(error)")
+                } else {
+                    DispatchQueue.main.async {
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }
+            }
         }
     }
     

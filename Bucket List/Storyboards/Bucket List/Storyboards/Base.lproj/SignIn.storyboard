@@ -13,7 +13,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="S0J-ER-wEk">
             <objects>
-                <viewController id="fdo-4c-6KU" customClass="SignInViewController" customModule="Bucket_List" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fdo-4c-6KU" customClass="SignInViewController" customModule="LambdaBucketList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I35-Ih-h4J">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,13 +25,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="254" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WeP-C7-KSS">
                                         <rect key="frame" x="0.0" y="38" width="254" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -77,8 +77,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="3IR-dR-Wmr"/>
                     <connections>
+                        <outlet property="emailTextField" destination="qa4-1C-AfF" id="0xf-2W-GYu"/>
                         <outlet property="passwordTextField" destination="WeP-C7-KSS" id="zNj-lf-wpp"/>
-                        <outlet property="usernameTextField" destination="qa4-1C-AfF" id="0xf-2W-GYu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KMI-YC-X2w" userLabel="First Responder" sceneMemberID="firstResponder"/>
