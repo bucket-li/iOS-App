@@ -155,7 +155,6 @@ class BucketListClient {
             guard let data = data else { completion(.failure(.badData)); return }
             
             let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .secondsSince1970
             do {
                 let user = try decoder.decode(User.self, from: data)
                 completion(.success(user))
@@ -187,7 +186,6 @@ class BucketListClient {
             guard let data = data else { completion(.failure(.badData)); return }
             
             let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .secondsSince1970
             do {
                 let user = try decoder.decode(User.self, from: data)
                 completion(.success(user))
@@ -199,7 +197,7 @@ class BucketListClient {
         }.resume()
     }
     
-    func fetchUserItems(withId id: Int16, completion: @escaping (Result<[Item], NetworkError>) -> Void) {
+    func fetchUserItems(withId id: Int16, completion: @escaping (Result<Items, NetworkError>) -> Void) {
         guard let token = self.token else { completion(.failure(.noAuth)); return }
         
         let requestURL = baseURL.appendingPathComponent("api/user/\(id)/items")
@@ -219,9 +217,9 @@ class BucketListClient {
             guard let data = data else { completion(.failure(.badData)); return }
             
             let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .secondsSince1970
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
             do {
-                let items = try decoder.decode([Item].self, from: data)
+                let items = try decoder.decode(Items.self, from: data)
                 completion(.success(items))
             } catch {
                 NSLog("Error decoding items object: \(error)")
