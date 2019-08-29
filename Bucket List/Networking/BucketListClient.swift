@@ -400,10 +400,13 @@ class BucketListClient {
     }
     
     func createItem(withUserId userId: Int, withDescription description: String, withCompleted completed: Bool = false, completion: @escaping CompletionHandler = { _ in }) {
+        guard let token = self.token else { completion(NSError()); return }
+        
         let requestURL = baseURL.appendingPathComponent("api/item")
         
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.post.rawValue
+        request.addValue(token.token, forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         do {
@@ -418,6 +421,7 @@ class BucketListClient {
             if let response = response as? HTTPURLResponse,
                 response.statusCode != 200 {
                 completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
+                print(response)
                 return
             }
             
@@ -427,10 +431,13 @@ class BucketListClient {
     }
     
     func createItemPost(withItemId itemId: Int, withMessage message: String, completion: @escaping CompletionHandler = { _ in }) {
+        guard let token = self.token else { completion(NSError()); return }
+        
         let requestURL = baseURL.appendingPathComponent("api/item")
         
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.post.rawValue
+        request.addValue(token.token, forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         do {
@@ -454,10 +461,13 @@ class BucketListClient {
     }
     
     func createPostImage(withPostId postId: Int, withImage image: UIImage?, withImageURL imageURL: URL?, completion: @escaping CompletionHandler = { _ in }) {
+        guard let token = self.token else { completion(NSError()); return }
+        
         let requestURL = baseURL.appendingPathComponent("api/item")
         
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.post.rawValue
+        request.addValue(token.token, forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         do {
@@ -481,10 +491,13 @@ class BucketListClient {
     }
     
     func updateItem(withItemId itemId: Int, withDescription description: String, withCompleted completed: Bool = false, completion: @escaping CompletionHandler = { _ in }) {
+        guard let token = self.token else { completion(NSError()); return }
+        
         let requestURL = baseURL.appendingPathComponent("api/item/\(itemId)")
         
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.put.rawValue
+        request.addValue(token.token, forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         do {
@@ -508,10 +521,13 @@ class BucketListClient {
     }
     
     func updateItemPost(withPostId postId: Int, withItemId itemId: Int, withMessage message: String, completion: @escaping CompletionHandler = { _ in }) {
+        guard let token = self.token else { completion(NSError()); return }
+        
         let requestURL = baseURL.appendingPathComponent("api/item/post/\(postId)")
         
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.post.rawValue
+        request.addValue(token.token, forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         do {
@@ -535,10 +551,13 @@ class BucketListClient {
     }
     
     func updatePostImage(withImageId imageId: Int, withPostId postId: Int, withImage image: UIImage?, withImageURL imageURL: URL?, completion: @escaping CompletionHandler = { _ in }) {
+        guard let token = self.token else { completion(NSError()); return }
+        
         let requestURL = baseURL.appendingPathComponent("api/item/post/image/\(imageId)")
         
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.post.rawValue
+        request.addValue(token.token, forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         do {
@@ -562,10 +581,13 @@ class BucketListClient {
     }
     
     func deleteItem(withItemId itemId: Int, completion: @escaping CompletionHandler = { _ in }) {
+        guard let token = self.token else { completion(NSError()); return }
+        
         let requestURL = baseURL.appendingPathComponent("api/item/\(itemId)")
         
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.delete.rawValue
+        request.addValue(token.token, forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -581,10 +603,13 @@ class BucketListClient {
     }
     
     func deleteItemPost(withPostId postId: Int, completion: @escaping CompletionHandler = { _ in }) {
+        guard let token = self.token else { completion(NSError()); return }
+        
         let requestURL = baseURL.appendingPathComponent("api/item/post/\(postId)")
         
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.delete.rawValue
+        request.addValue(token.token, forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -600,10 +625,13 @@ class BucketListClient {
     }
     
     func deletePostImage(withImageId imageId: Int, completion: @escaping CompletionHandler = { _ in }) {
+        guard let token = self.token else { completion(NSError()); return }
+        
         let requestURL = baseURL.appendingPathComponent("api/item/post/image/\(imageId)")
         
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.delete.rawValue
+        request.addValue(token.token, forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in

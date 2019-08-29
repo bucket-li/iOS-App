@@ -12,7 +12,7 @@ class BucketListTableViewController: UITableViewController {
     
     @IBOutlet var createTripTextField: UITextField!
     var bucketListClient = BucketListClient()
-    var users: [User] = []
+    var user: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,22 +27,9 @@ class BucketListTableViewController: UITableViewController {
         
         self.bucketListClient.fetchLoggedInUser { (result) in
             if let user = try? result.get() {
-                print(user)
+                self.user = user.user
             }
         }
-        
-//        self.bucketListClient.fetchUser(withId: 13) { (result) in
-//            if let user = try? result.get() {
-//                print(user)
-//            }
-//        }
-//
-//        self.bucketListClient.fetchAllUsers { (result) in
-//            if let users = try? result.get() {
-//                self.users = users.users
-//                print(self.users)
-//            }
-//        }
     }
 
     // MARK: - Table view data source
@@ -93,9 +80,10 @@ class BucketListTableViewController: UITableViewController {
     }
     
     @IBAction func createTrip(_ sender: UITextField) {
-        guard let message = self.createTripTextField.text else { return }
+        guard let message = self.createTripTextField.text,
+            let user = self.user else { return }
         
-        self.bucketListClient.createItem(withUserId: 13, withDescription: message) { (error) in
+        self.bucketListClient.createItem(withUserId: user.id, withDescription: message) { (error) in
             if let error = error {
                 NSLog("Error creating your Trip: \(error)")
             }
