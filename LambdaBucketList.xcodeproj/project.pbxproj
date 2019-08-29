@@ -27,6 +27,10 @@
 		D68FA23C23161B7E00B5A909 /* BucketListPosts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D68FA23B23161B7E00B5A909 /* BucketListPosts.storyboard */; };
 		D68FA23E2316213200B5A909 /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68FA23D2316213200B5A909 /* TripTableViewCell.swift */; };
 		D68FA241231623CA00B5A909 /* TripTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68FA240231623CA00B5A909 /* TripTableViewCellDelegate.swift */; };
+		D68FA24323175B8C00B5A909 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68FA24223175B8C00B5A909 /* UserResponse.swift */; };
+		D68FA24523175BB600B5A909 /* ItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68FA24423175BB600B5A909 /* ItemResponse.swift */; };
+		D68FA24723175BD800B5A909 /* PostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68FA24623175BD800B5A909 /* PostResponse.swift */; };
+		D68FA24923175BF300B5A909 /* ImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68FA24823175BF300B5A909 /* ImageResponse.swift */; };
 		D6AFBA26230F773900C86174 /* BucketListClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AFBA25230F773900C86174 /* BucketListClient.swift */; };
 		D6AFBA31230F87BE00C86174 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AFBA30230F87BE00C86174 /* Token.swift */; };
 		D6AFBA33230F8D3600C86174 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AFBA32230F8D3600C86174 /* User.swift */; };
@@ -57,6 +61,10 @@
 		D68FA23B23161B7E00B5A909 /* BucketListPosts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BucketListPosts.storyboard; sourceTree = "<group>"; };
 		D68FA23D2316213200B5A909 /* TripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
 		D68FA240231623CA00B5A909 /* TripTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewCellDelegate.swift; sourceTree = "<group>"; };
+		D68FA24223175B8C00B5A909 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		D68FA24423175BB600B5A909 /* ItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemResponse.swift; sourceTree = "<group>"; };
+		D68FA24623175BD800B5A909 /* PostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostResponse.swift; sourceTree = "<group>"; };
+		D68FA24823175BF300B5A909 /* ImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResponse.swift; sourceTree = "<group>"; };
 		D6AFBA25230F773900C86174 /* BucketListClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListClient.swift; sourceTree = "<group>"; };
 		D6AFBA30230F87BE00C86174 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		D6AFBA32230F8D3600C86174 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -153,12 +161,16 @@
 			children = (
 				D6AFBA30230F87BE00C86174 /* Token.swift */,
 				D68FA2262314E4BB00B5A909 /* Users.swift */,
+				D68FA24223175B8C00B5A909 /* UserResponse.swift */,
 				D6AFBA32230F8D3600C86174 /* User.swift */,
 				D68FA2282314E4F600B5A909 /* Items.swift */,
+				D68FA24423175BB600B5A909 /* ItemResponse.swift */,
 				D68FA2242314BA5C00B5A909 /* Item.swift */,
 				D68FA22A2314E54D00B5A909 /* Posts.swift */,
+				D68FA24623175BD800B5A909 /* PostResponse.swift */,
 				D68FA22C2314E56100B5A909 /* Post.swift */,
 				D68FA22E2314E5CC00B5A909 /* Images.swift */,
+				D68FA24823175BF300B5A909 /* ImageResponse.swift */,
 				D68FA2302314E5DE00B5A909 /* Image.swift */,
 			);
 			path = Models;
@@ -256,8 +268,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				37A04E97230F92B200B5C6EA /* SignInViewController.swift in Sources */,
+				D68FA24723175BD800B5A909 /* PostResponse.swift in Sources */,
 				D68FA23323161A9700B5A909 /* BucketListTableViewController.swift in Sources */,
 				D68FA22B2314E54D00B5A909 /* Posts.swift in Sources */,
+				D68FA24923175BF300B5A909 /* ImageResponse.swift in Sources */,
 				37A04E99230F92C300B5C6EA /* SignUpViewController.swift in Sources */,
 				D6AFBA31230F87BE00C86174 /* Token.swift in Sources */,
 				D68FA241231623CA00B5A909 /* TripTableViewCellDelegate.swift in Sources */,
@@ -268,11 +282,13 @@
 				D68FA2292314E4F600B5A909 /* Items.swift in Sources */,
 				D68FA22D2314E56100B5A909 /* Post.swift in Sources */,
 				D68FA2252314BA5C00B5A909 /* Item.swift in Sources */,
+				D68FA24323175B8C00B5A909 /* UserResponse.swift in Sources */,
 				D68FA2312314E5DE00B5A909 /* Image.swift in Sources */,
 				D6AFBA33230F8D3600C86174 /* User.swift in Sources */,
 				D68FA22F2314E5CC00B5A909 /* Images.swift in Sources */,
 				D68FA23523161AD900B5A909 /* BucketListPostTableViewController.swift in Sources */,
 				D67D9A11230CF5A900DF9C0C /* AppDelegate.swift in Sources */,
+				D68FA24523175BB600B5A909 /* ItemResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

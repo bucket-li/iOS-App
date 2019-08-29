@@ -145,7 +145,7 @@ class BucketListClient {
         }.resume()
     }
     
-    func fetchLoggedInUser(completion: @escaping (Result<User, NetworkError>) -> Void) {
+    func fetchLoggedInUser(completion: @escaping (Result<UserResponse, NetworkError>) -> Void) {
         guard let token = self.token else { completion(.failure(.noAuth)); return }
         
         let requestURL = baseURL.appendingPathComponent("api/user")
@@ -166,7 +166,7 @@ class BucketListClient {
             
             let decoder = JSONDecoder()
             do {
-                let user = try decoder.decode(User.self, from: data)
+                let user = try decoder.decode(UserResponse.self, from: data)
                 completion(.success(user))
             } catch {
                 NSLog("Error decoding user object: \(error)")
@@ -176,7 +176,7 @@ class BucketListClient {
         }.resume()
     }
     
-    func fetchUser(withId id: Int, completion: @escaping (Result<User, NetworkError>) -> Void) {
+    func fetchUser(withId id: Int, completion: @escaping (Result<UserResponse, NetworkError>) -> Void) {
         guard let token = self.token else { completion(.failure(.noAuth)); return }
         
         let requestURL = baseURL.appendingPathComponent("api/user/\(id)")
@@ -197,7 +197,7 @@ class BucketListClient {
             
             let decoder = JSONDecoder()
             do {
-                let user = try decoder.decode(User.self, from: data)
+                let user = try decoder.decode(UserResponse.self, from: data)
                 completion(.success(user))
             } catch {
                 NSLog("Error decoding user object: \(error)")
@@ -239,7 +239,7 @@ class BucketListClient {
         }.resume()
     }
     
-    func fetchItem(withId id: Int, completion: @escaping (Result<Item, NetworkError>) -> Void) {
+    func fetchItem(withId id: Int, completion: @escaping (Result<ItemResponse, NetworkError>) -> Void) {
         guard let token = self.token else { completion(.failure(.noAuth)); return }
         
         let requestURL = baseURL.appendingPathComponent("api/item/\(id)")
@@ -261,7 +261,7 @@ class BucketListClient {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             do {
-                let item = try decoder.decode(Item.self, from: data)
+                let item = try decoder.decode(ItemResponse.self, from: data)
                 completion(.success(item))
             } catch {
                 NSLog("Error decoding item object: \(error)")
@@ -303,7 +303,7 @@ class BucketListClient {
         }.resume()
     }
     
-    func fetchPost(withId id: Int, completion: @escaping (Result<Post, NetworkError>) -> Void) {
+    func fetchPost(withId id: Int, completion: @escaping (Result<PostResponse, NetworkError>) -> Void) {
         guard let token = self.token else { completion(.failure(.noAuth)); return }
         
         let requestURL = baseURL.appendingPathComponent("api/item/post/\(id)")
@@ -325,7 +325,7 @@ class BucketListClient {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             do {
-                let post = try decoder.decode(Post.self, from: data)
+                let post = try decoder.decode(PostResponse.self, from: data)
                 completion(.success(post))
             } catch {
                 NSLog("Error decoding item object: \(error)")
@@ -367,7 +367,7 @@ class BucketListClient {
         }.resume()
     }
     
-    func fetchPostImage(withId id: Int, completion: @escaping (Result<Image, NetworkError>) -> Void) {
+    func fetchPostImage(withId id: Int, completion: @escaping (Result<ImageResponse, NetworkError>) -> Void) {
         guard let token = self.token else { completion(.failure(.noAuth)); return }
         
         let requestURL = baseURL.appendingPathComponent("api/item/post/image/\(id)")
@@ -389,7 +389,7 @@ class BucketListClient {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             do {
-                let image = try decoder.decode(Image.self, from: data)
+                let image = try decoder.decode(ImageResponse.self, from: data)
                 completion(.success(image))
             } catch {
                 NSLog("Error decoding item object: \(error)")
