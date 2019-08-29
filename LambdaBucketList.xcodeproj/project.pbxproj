@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		37A04E97230F92B200B5C6EA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A04E96230F92B200B5C6EA /* SignInViewController.swift */; };
 		37A04E99230F92C300B5C6EA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A04E98230F92C300B5C6EA /* SignUpViewController.swift */; };
+		D61219D823177F21009D7BED /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61219D723177F21009D7BED /* AppearanceHelper.swift */; };
 		D67D9A11230CF5A900DF9C0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67D9A10230CF5A900DF9C0C /* AppDelegate.swift */; };
 		D67D9A16230CF5A900DF9C0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67D9A14230CF5A900DF9C0C /* Main.storyboard */; };
 		D67D9A18230CF5AA00DF9C0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D67D9A17230CF5AA00DF9C0C /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		37A04E96230F92B200B5C6EA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		37A04E98230F92C300B5C6EA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		D61219D723177F21009D7BED /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
 		D67D9A0D230CF5A900DF9C0C /* LambdaBucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LambdaBucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D67D9A10230CF5A900DF9C0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D67D9A15230CF5A900DF9C0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,6 +95,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		D61219D623177F0D009D7BED /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D61219D723177F21009D7BED /* AppearanceHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		D67D9A04230CF5A900DF9C0C = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +129,7 @@
 				37A04E8D230E3D0C00B5C6EA /* Views */,
 				D67D9A24230CF5DD00DF9C0C /* View Controllers */,
 				D67D9A23230CF5D500DF9C0C /* Storyboards */,
+				D61219D623177F0D009D7BED /* Helpers */,
 				D67D9A22230CF5C700DF9C0C /* Resources */,
 			);
 			path = "Bucket List";
@@ -288,6 +299,7 @@
 				D68FA2252314BA5C00B5A909 /* Item.swift in Sources */,
 				D68FA24323175B8C00B5A909 /* UserResponse.swift in Sources */,
 				D68FA2312314E5DE00B5A909 /* Image.swift in Sources */,
+				D61219D823177F21009D7BED /* AppearanceHelper.swift in Sources */,
 				D6AFBA33230F8D3600C86174 /* User.swift in Sources */,
 				D68FA22F2314E5CC00B5A909 /* Images.swift in Sources */,
 				D68FA23523161AD900B5A909 /* BucketListPostTableViewController.swift in Sources */,

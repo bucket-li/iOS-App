@@ -22,7 +22,7 @@
             </objects>
             <point key="canvasLocation" x="1562" y="-523"/>
         </scene>
-        <!--Bucket List-->
+        <!--BUCKET LIST-->
         <scene sceneID="sLO-L0-7Ey">
             <objects>
                 <tableViewController id="MxV-wG-Ysk" customClass="BucketListTableViewController" customModule="LambdaBucketList" customModuleProvider="target" sceneMemberID="viewController">
@@ -66,7 +66,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odo-K1-zuZ">
                                                     <rect key="frame" x="0.0" y="0.0" width="324.5" height="27.5"/>
                                                     <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67L-4N-qu9">
@@ -102,7 +102,7 @@
                             <outlet property="delegate" destination="MxV-wG-Ysk" id="8yS-dG-UMx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Bucket List" id="nU3-hb-vM0"/>
+                    <navigationItem key="navigationItem" title="BUCKET LIST" id="nU3-hb-vM0"/>
                     <connections>
                         <outlet property="createTripTextField" destination="OPh-Fb-X4M" id="lNf-1n-Zsy"/>
                         <segue destination="qAg-oH-V0S" kind="presentation" identifier="signInModalSegue" id="0S9-lm-UxR"/>

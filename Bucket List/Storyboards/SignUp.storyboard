@@ -23,29 +23,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QfY-PD-Tqr">
-                                <rect key="frame" x="80" y="152" width="254" height="144"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="QfY-PD-Tqr">
+                                <rect key="frame" x="16" y="216" width="382" height="216"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0fH-Ia-FeF">
-                                        <rect key="frame" x="0.0" y="0.0" width="254" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0fH-Ia-FeF">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="n02-xy-0el"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g13-p7-Tap">
-                                        <rect key="frame" x="0.0" y="38" width="254" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="g13-p7-Tap">
+                                        <rect key="frame" x="0.0" y="62" width="382" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="KL7-sr-3JU"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UKG-zB-ZJq">
-                                        <rect key="frame" x="0.0" y="76" width="254" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UKG-zB-ZJq">
+                                        <rect key="frame" x="0.0" y="124" width="382" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="y3s-WS-xIh"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UQG-Z3-qrN">
-                                        <rect key="frame" x="0.0" y="114" width="254" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UQG-Z3-qrN">
+                                        <rect key="frame" x="0.0" y="186" width="382" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="ixK-3g-ZAU"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -53,23 +65,32 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Qd-h7-QcJ">
-                                <rect key="frame" x="16" y="328" width="382" height="34"/>
-                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
-                                <state key="normal" title="Register"/>
+                                <rect key="frame" x="16" y="496" width="382" height="44"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="22z-VU-4SO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="15"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="REGISTER">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="registerButtonTapped:" destination="QhX-1y-FZz" eventType="touchUpInside" id="K8z-kp-mLa"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIl-nd-ctF">
-                                <rect key="frame" x="16" y="76" width="382" height="44"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN UP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIl-nd-ctF">
+                                <rect key="frame" x="16" y="108" width="382" height="44"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="35"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HK9-HE-L3C">
                                 <rect key="frame" x="16" y="40" width="382" height="34"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
-                                <state key="normal" title="Back"/>
+                                <state key="normal" title="&lt;  BACK">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="qAg-oH-V0S" kind="show" identifier="backToSignInSegue" id="CFj-RN-4t9"/>
                                 </connections>
@@ -77,18 +98,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="SIl-nd-ctF" firstAttribute="top" secondItem="KYX-qp-QNT" secondAttribute="top" constant="32" id="5OH-x8-6rF"/>
-                            <constraint firstItem="QfY-PD-Tqr" firstAttribute="top" secondItem="SIl-nd-ctF" secondAttribute="bottom" constant="32" id="Ejy-g9-0Zo"/>
+                            <constraint firstItem="SIl-nd-ctF" firstAttribute="top" secondItem="KYX-qp-QNT" secondAttribute="top" constant="64" id="5OH-x8-6rF"/>
+                            <constraint firstItem="QfY-PD-Tqr" firstAttribute="top" secondItem="SIl-nd-ctF" secondAttribute="bottom" constant="64" id="Ejy-g9-0Zo"/>
                             <constraint firstItem="KYX-qp-QNT" firstAttribute="trailing" secondItem="5Qd-h7-QcJ" secondAttribute="trailing" constant="16" id="EwY-lb-aNn"/>
                             <constraint firstItem="KYX-qp-QNT" firstAttribute="trailing" secondItem="HK9-HE-L3C" secondAttribute="trailing" constant="16" id="Iwv-G6-UN4"/>
                             <constraint firstItem="HK9-HE-L3C" firstAttribute="leading" secondItem="KYX-qp-QNT" secondAttribute="leading" constant="16" id="MQW-67-MnM"/>
                             <constraint firstItem="SIl-nd-ctF" firstAttribute="leading" secondItem="KYX-qp-QNT" secondAttribute="leading" constant="16" id="TX3-pg-wnR"/>
                             <constraint firstItem="KYX-qp-QNT" firstAttribute="trailing" secondItem="SIl-nd-ctF" secondAttribute="trailing" constant="16" id="akp-ks-kbq"/>
-                            <constraint firstItem="KYX-qp-QNT" firstAttribute="trailing" secondItem="QfY-PD-Tqr" secondAttribute="trailing" constant="80" id="lOD-6x-w2z"/>
+                            <constraint firstItem="KYX-qp-QNT" firstAttribute="trailing" secondItem="QfY-PD-Tqr" secondAttribute="trailing" constant="16" id="lOD-6x-w2z"/>
                             <constraint firstItem="5Qd-h7-QcJ" firstAttribute="leading" secondItem="KYX-qp-QNT" secondAttribute="leading" constant="16" id="mkD-Jf-2s9"/>
                             <constraint firstItem="HK9-HE-L3C" firstAttribute="top" secondItem="dwi-rD-Zts" secondAttribute="top" constant="40" id="sPb-MF-xwr"/>
-                            <constraint firstItem="5Qd-h7-QcJ" firstAttribute="top" secondItem="QfY-PD-Tqr" secondAttribute="bottom" constant="32" id="vmH-Oq-YcN"/>
-                            <constraint firstItem="QfY-PD-Tqr" firstAttribute="leading" secondItem="KYX-qp-QNT" secondAttribute="leading" constant="80" id="y10-PF-3yE"/>
+                            <constraint firstItem="5Qd-h7-QcJ" firstAttribute="top" secondItem="QfY-PD-Tqr" secondAttribute="bottom" constant="64" id="vmH-Oq-YcN"/>
+                            <constraint firstItem="QfY-PD-Tqr" firstAttribute="leading" secondItem="KYX-qp-QNT" secondAttribute="leading" constant="16" id="y10-PF-3yE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KYX-qp-QNT"/>
                     </view>
@@ -97,6 +118,7 @@
                         <outlet property="emailAddressTextField" destination="g13-p7-Tap" id="Z6L-FS-hLd"/>
                         <outlet property="nameTextField" destination="0fH-Ia-FeF" id="l8I-dG-M0o"/>
                         <outlet property="newPasswordTextField" destination="UKG-zB-ZJq" id="ONu-Fc-9Wo"/>
+                        <outlet property="registerButton" destination="5Qd-h7-QcJ" id="p6M-V1-Z5Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tiy-DT-4us" userLabel="First Responder" sceneMemberID="firstResponder"/>
