@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		37A04E8C230E34A600B5C6EA /* BucketListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A04E8B230E34A600B5C6EA /* BucketListCollectionViewController.swift */; };
-		37A04E8F230E3D2F00B5C6EA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A04E8E230E3D2F00B5C6EA /* DetailViewController.swift */; };
-		37A04E91230E3D4E00B5C6EA /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A04E90230E3D4E00B5C6EA /* ShareViewController.swift */; };
-		37A04E93230E3D6F00B5C6EA /* TripCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A04E92230E3D6F00B5C6EA /* TripCollectionViewCell.swift */; };
 		37A04E97230F92B200B5C6EA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A04E96230F92B200B5C6EA /* SignInViewController.swift */; };
 		37A04E99230F92C300B5C6EA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A04E98230F92C300B5C6EA /* SignUpViewController.swift */; };
 		D67D9A11230CF5A900DF9C0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67D9A10230CF5A900DF9C0C /* AppDelegate.swift */; };
@@ -24,20 +20,21 @@
 		D68FA22D2314E56100B5A909 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68FA22C2314E56100B5A909 /* Post.swift */; };
 		D68FA22F2314E5CC00B5A909 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68FA22E2314E5CC00B5A909 /* Images.swift */; };
 		D68FA2312314E5DE00B5A909 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68FA2302314E5DE00B5A909 /* Image.swift */; };
+		D68FA23323161A9700B5A909 /* BucketListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68FA23223161A9700B5A909 /* BucketListTableViewController.swift */; };
+		D68FA23523161AD900B5A909 /* BucketListPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68FA23423161AD900B5A909 /* BucketListPostTableViewController.swift */; };
+		D68FA23723161B0B00B5A909 /* PostImagesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68FA23623161B0B00B5A909 /* PostImagesCollectionViewController.swift */; };
+		D68FA23A23161B3200B5A909 /* PostImages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D68FA23823161B3200B5A909 /* PostImages.storyboard */; };
+		D68FA23C23161B7E00B5A909 /* BucketListPosts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D68FA23B23161B7E00B5A909 /* BucketListPosts.storyboard */; };
+		D68FA23E2316213200B5A909 /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68FA23D2316213200B5A909 /* TripTableViewCell.swift */; };
+		D68FA241231623CA00B5A909 /* TripTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68FA240231623CA00B5A909 /* TripTableViewCellDelegate.swift */; };
 		D6AFBA26230F773900C86174 /* BucketListClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AFBA25230F773900C86174 /* BucketListClient.swift */; };
 		D6AFBA31230F87BE00C86174 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AFBA30230F87BE00C86174 /* Token.swift */; };
 		D6AFBA33230F8D3600C86174 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AFBA32230F8D3600C86174 /* User.swift */; };
 		D6AFBA382311B4A900C86174 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6AFBA362311B4A900C86174 /* SignIn.storyboard */; };
 		D6AFBA3A2311B4C300C86174 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6AFBA392311B4C300C86174 /* SignUp.storyboard */; };
-		D6AFBA3D2311B55700C86174 /* Share.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6AFBA3B2311B55700C86174 /* Share.storyboard */; };
-		D6AFBA3F2311B58900C86174 /* DetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6AFBA3E2311B58900C86174 /* DetailView.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		37A04E8B230E34A600B5C6EA /* BucketListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListCollectionViewController.swift; sourceTree = "<group>"; };
-		37A04E8E230E3D2F00B5C6EA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		37A04E90230E3D4E00B5C6EA /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
-		37A04E92230E3D6F00B5C6EA /* TripCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCollectionViewCell.swift; sourceTree = "<group>"; };
 		37A04E96230F92B200B5C6EA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		37A04E98230F92C300B5C6EA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D67D9A0D230CF5A900DF9C0C /* LambdaBucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LambdaBucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,13 +50,18 @@
 		D68FA22C2314E56100B5A909 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		D68FA22E2314E5CC00B5A909 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		D68FA2302314E5DE00B5A909 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		D68FA23223161A9700B5A909 /* BucketListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListTableViewController.swift; sourceTree = "<group>"; };
+		D68FA23423161AD900B5A909 /* BucketListPostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListPostTableViewController.swift; sourceTree = "<group>"; };
+		D68FA23623161B0B00B5A909 /* PostImagesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImagesCollectionViewController.swift; sourceTree = "<group>"; };
+		D68FA23923161B3200B5A909 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Bucket List/Storyboards/Base.lproj/PostImages.storyboard"; sourceTree = "<group>"; };
+		D68FA23B23161B7E00B5A909 /* BucketListPosts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BucketListPosts.storyboard; sourceTree = "<group>"; };
+		D68FA23D2316213200B5A909 /* TripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
+		D68FA240231623CA00B5A909 /* TripTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		D6AFBA25230F773900C86174 /* BucketListClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListClient.swift; sourceTree = "<group>"; };
 		D6AFBA30230F87BE00C86174 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		D6AFBA32230F8D3600C86174 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D6AFBA372311B4A900C86174 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Bucket List/Storyboards/Base.lproj/SignIn.storyboard"; sourceTree = "<group>"; };
 		D6AFBA392311B4C300C86174 /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
-		D6AFBA3C2311B55700C86174 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Bucket List/Storyboards/Base.lproj/Share.storyboard"; sourceTree = "<group>"; };
-		D6AFBA3E2311B58900C86174 /* DetailView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailView.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +78,7 @@
 		37A04E8D230E3D0C00B5C6EA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				37A04E92230E3D6F00B5C6EA /* TripCollectionViewCell.swift */,
+				D68FA23D2316213200B5A909 /* TripTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -102,6 +104,7 @@
 			children = (
 				D67D9A10230CF5A900DF9C0C /* AppDelegate.swift */,
 				D67D9A25230CF5F800DF9C0C /* Models */,
+				D68FA23F231623A900B5A909 /* Model Controllers */,
 				D6AFBA24230F73E200C86174 /* Networking */,
 				37A04E8D230E3D0C00B5C6EA /* Views */,
 				D67D9A24230CF5DD00DF9C0C /* View Controllers */,
@@ -126,8 +129,8 @@
 				D6AFBA392311B4C300C86174 /* SignUp.storyboard */,
 				D6AFBA362311B4A900C86174 /* SignIn.storyboard */,
 				D67D9A14230CF5A900DF9C0C /* Main.storyboard */,
-				D6AFBA3E2311B58900C86174 /* DetailView.storyboard */,
-				D6AFBA3B2311B55700C86174 /* Share.storyboard */,
+				D68FA23B23161B7E00B5A909 /* BucketListPosts.storyboard */,
+				D68FA23823161B3200B5A909 /* PostImages.storyboard */,
 				D67D9A19230CF5AA00DF9C0C /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -136,9 +139,9 @@
 		D67D9A24230CF5DD00DF9C0C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				37A04E8B230E34A600B5C6EA /* BucketListCollectionViewController.swift */,
-				37A04E8E230E3D2F00B5C6EA /* DetailViewController.swift */,
-				37A04E90230E3D4E00B5C6EA /* ShareViewController.swift */,
+				D68FA23223161A9700B5A909 /* BucketListTableViewController.swift */,
+				D68FA23423161AD900B5A909 /* BucketListPostTableViewController.swift */,
+				D68FA23623161B0B00B5A909 /* PostImagesCollectionViewController.swift */,
 				37A04E96230F92B200B5C6EA /* SignInViewController.swift */,
 				37A04E98230F92C300B5C6EA /* SignUpViewController.swift */,
 			);
@@ -159,6 +162,14 @@
 				D68FA2302314E5DE00B5A909 /* Image.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D68FA23F231623A900B5A909 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D68FA240231623CA00B5A909 /* TripTableViewCellDelegate.swift */,
+			);
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 		D6AFBA24230F73E200C86174 /* Networking */ = {
@@ -227,13 +238,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D68FA23A23161B3200B5A909 /* PostImages.storyboard in Resources */,
 				D6AFBA382311B4A900C86174 /* SignIn.storyboard in Resources */,
 				D67D9A1B230CF5AA00DF9C0C /* LaunchScreen.storyboard in Resources */,
-				D6AFBA3F2311B58900C86174 /* DetailView.storyboard in Resources */,
-				D6AFBA3D2311B55700C86174 /* Share.storyboard in Resources */,
 				D67D9A18230CF5AA00DF9C0C /* Assets.xcassets in Resources */,
 				D67D9A16230CF5A900DF9C0C /* Main.storyboard in Resources */,
 				D6AFBA3A2311B4C300C86174 /* SignUp.storyboard in Resources */,
+				D68FA23C23161B7E00B5A909 /* BucketListPosts.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,21 +256,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				37A04E97230F92B200B5C6EA /* SignInViewController.swift in Sources */,
+				D68FA23323161A9700B5A909 /* BucketListTableViewController.swift in Sources */,
 				D68FA22B2314E54D00B5A909 /* Posts.swift in Sources */,
 				37A04E99230F92C300B5C6EA /* SignUpViewController.swift in Sources */,
 				D6AFBA31230F87BE00C86174 /* Token.swift in Sources */,
+				D68FA241231623CA00B5A909 /* TripTableViewCellDelegate.swift in Sources */,
 				D6AFBA26230F773900C86174 /* BucketListClient.swift in Sources */,
+				D68FA23723161B0B00B5A909 /* PostImagesCollectionViewController.swift in Sources */,
+				D68FA23E2316213200B5A909 /* TripTableViewCell.swift in Sources */,
 				D68FA2272314E4BB00B5A909 /* Users.swift in Sources */,
-				37A04E8F230E3D2F00B5C6EA /* DetailViewController.swift in Sources */,
 				D68FA2292314E4F600B5A909 /* Items.swift in Sources */,
-				37A04E8C230E34A600B5C6EA /* BucketListCollectionViewController.swift in Sources */,
 				D68FA22D2314E56100B5A909 /* Post.swift in Sources */,
 				D68FA2252314BA5C00B5A909 /* Item.swift in Sources */,
 				D68FA2312314E5DE00B5A909 /* Image.swift in Sources */,
 				D6AFBA33230F8D3600C86174 /* User.swift in Sources */,
-				37A04E91230E3D4E00B5C6EA /* ShareViewController.swift in Sources */,
 				D68FA22F2314E5CC00B5A909 /* Images.swift in Sources */,
-				37A04E93230E3D6F00B5C6EA /* TripCollectionViewCell.swift in Sources */,
+				D68FA23523161AD900B5A909 /* BucketListPostTableViewController.swift in Sources */,
 				D67D9A11230CF5A900DF9C0C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,20 +295,20 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		D68FA23823161B3200B5A909 /* PostImages.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D68FA23923161B3200B5A909 /* Base */,
+			);
+			name = PostImages.storyboard;
+			sourceTree = "<group>";
+		};
 		D6AFBA362311B4A900C86174 /* SignIn.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				D6AFBA372311B4A900C86174 /* Base */,
 			);
 			name = SignIn.storyboard;
-			sourceTree = "<group>";
-		};
-		D6AFBA3B2311B55700C86174 /* Share.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D6AFBA3C2311B55700C86174 /* Base */,
-			);
-			name = Share.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -1,8 +1,8 @@
 //
-//  BucketListCollectionViewController.swift
-//  Bucket List
+//  PostImagesCollectionViewController.swift
+//  LambdaBucketList
 //
-//  Created by Bobby Keffury on 8/21/19.
+//  Created by Michael Stoffer on 8/27/19.
 //  Copyright © 2019 Michael Stoffer. All rights reserved.
 //
 
@@ -10,42 +10,29 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class BucketListCollectionViewController: UICollectionViewController {
+class PostImagesCollectionViewController: UICollectionViewController {
 
-    var bucketListClient = BucketListClient()
-    var users: [User] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if bucketListClient.token == nil {
-            performSegue(withIdentifier: "signInModalSegue", sender: self)
-        }
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.bucketListClient.fetchAllUsers { (result) in
-            if let users = try? result.get() {
-                self.users = users.users
-            }
-        }
+
+        // Do any additional setup after loading the view.
     }
 
-    
+    /*
     // MARK: - Navigation
 
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "signInModalSegue" {
-            guard let loginVC = segue.destination as? SignInViewController else { return }
-            loginVC.bucketListClient = self.bucketListClient
-        }
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
     }
- 
+    */
 
     // MARK: UICollectionViewDataSource
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oyE-8d-AKQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7It-eu-oPn">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,133 +9,129 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Bucket List-->
-        <scene sceneID="FDK-y1-Nh4">
-            <objects>
-                <collectionViewController id="K18-8y-ojz" customClass="BucketListCollectionViewController" customModule="Bucket_List" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="De6-29-jR0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Za9-39-XnP">
-                            <size key="itemSize" width="400" height="347"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TripCell" id="seX-Ps-Zck" customClass="TripCollectionViewCell" customModule="Bucket_List" customModuleProvider="target">
-                                <rect key="frame" x="7" y="0.0" width="400" height="400"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tK9-Yi-haj">
-                                            <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Krq-XY-OOB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgi-aK-S4L">
-                                                    <rect key="frame" x="183" y="189.5" width="34" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Us-Gf-VED">
-                                                    <rect key="frame" x="16" y="230.5" width="368" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstItem="Cgi-aK-S4L" firstAttribute="centerY" secondItem="tK9-Yi-haj" secondAttribute="centerY" id="42W-dn-FI9"/>
-                                                <constraint firstAttribute="trailing" secondItem="Krq-XY-OOB" secondAttribute="trailing" id="Gij-Wd-pUG"/>
-                                                <constraint firstItem="Krq-XY-OOB" firstAttribute="top" secondItem="tK9-Yi-haj" secondAttribute="top" id="JWu-DA-KgI"/>
-                                                <constraint firstItem="Cgi-aK-S4L" firstAttribute="centerX" secondItem="tK9-Yi-haj" secondAttribute="centerX" id="OpH-Vb-cvd"/>
-                                                <constraint firstItem="3Us-Gf-VED" firstAttribute="top" secondItem="Cgi-aK-S4L" secondAttribute="bottom" constant="20" id="Vn2-XA-1ce"/>
-                                                <constraint firstItem="Krq-XY-OOB" firstAttribute="leading" secondItem="tK9-Yi-haj" secondAttribute="leading" id="X67-bQ-yrS"/>
-                                                <constraint firstAttribute="trailing" secondItem="3Us-Gf-VED" secondAttribute="trailing" constant="16" id="ZV0-Ue-VK5"/>
-                                                <constraint firstItem="3Us-Gf-VED" firstAttribute="leading" secondItem="tK9-Yi-haj" secondAttribute="leading" constant="16" id="ndf-Ia-wIr"/>
-                                                <constraint firstAttribute="bottom" secondItem="Krq-XY-OOB" secondAttribute="bottom" id="orM-5w-dxh"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="tK9-Yi-haj" firstAttribute="leading" secondItem="seX-Ps-Zck" secondAttribute="leading" id="40Z-3j-bh2"/>
-                                    <constraint firstAttribute="bottom" secondItem="tK9-Yi-haj" secondAttribute="bottom" id="Thk-C3-pYc"/>
-                                    <constraint firstAttribute="trailing" secondItem="tK9-Yi-haj" secondAttribute="trailing" id="irb-fc-5FB"/>
-                                    <constraint firstItem="tK9-Yi-haj" firstAttribute="top" secondItem="seX-Ps-Zck" secondAttribute="top" id="nKh-Lk-Swv"/>
-                                </constraints>
-                                <size key="customSize" width="400" height="400"/>
-                                <connections>
-                                    <outlet property="tripDescriptionLabel" destination="3Us-Gf-VED" id="gLF-n9-GIo"/>
-                                    <outlet property="tripImageView" destination="Krq-XY-OOB" id="J2Y-xn-CRB"/>
-                                    <outlet property="tripTitleLabel" destination="Cgi-aK-S4L" id="9fb-Ba-DCT"/>
-                                    <segue destination="PbL-wq-tsS" kind="presentation" identifier="EditBucketListTripModalSegue" id="9ye-Np-wjh"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="K18-8y-ojz" id="GYW-gP-Gf7"/>
-                            <outlet property="delegate" destination="K18-8y-ojz" id="TWn-pW-l0J"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" title="Bucket List" id="q7F-Pi-YE7">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="XVs-dQ-Y8P">
-                            <connections>
-                                <segue destination="PbL-wq-tsS" kind="presentation" identifier="AddBucketListTripModalSegue" id="EFV-8u-pMY"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <segue destination="qAg-oH-V0S" kind="presentation" identifier="signInModalSegue" id="JVT-nz-4In"/>
-                    </connections>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="H1j-rb-qJh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1560.8695652173915" y="-242.41071428571428"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="QtU-iZ-lAk">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oyE-8d-AKQ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="a6h-Dy-Gvw">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="K18-8y-ojz" kind="relationship" relationship="rootViewController" id="5Hw-Be-aPU"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="t9a-2S-htC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="738" y="-242"/>
-        </scene>
         <!--SignIn-->
         <scene sceneID="7Lw-dk-8Pe">
             <objects>
                 <viewControllerPlaceholder storyboardName="SignIn" id="qAg-oH-V0S" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="koI-VF-eeH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2157" y="-276"/>
+            <point key="canvasLocation" x="1562" y="-523"/>
         </scene>
-        <!--DetailView-->
-        <scene sceneID="2SZ-DQ-13o">
+        <!--Bucket List-->
+        <scene sceneID="sLO-L0-7Ey">
             <objects>
-                <viewControllerPlaceholder storyboardName="DetailView" id="PbL-wq-tsS" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E9M-V3-8Im" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="MxV-wG-Ysk" customClass="BucketListTableViewController" customModule="LambdaBucketList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AOg-Ae-GUg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="vjc-ZI-J2c">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create new trip:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OPh-Fb-X4M">
+                                    <rect key="frame" x="8" y="8" width="398" height="28"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                    <connections>
+                                        <action selector="createTrip:" destination="MxV-wG-Ysk" eventType="editingDidEndOnExit" id="kSG-Lp-tpH"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="OPh-Fb-X4M" secondAttribute="trailing" constant="8" id="GDl-r0-9p8"/>
+                                <constraint firstAttribute="bottom" secondItem="OPh-Fb-X4M" secondAttribute="bottom" constant="8" id="c7s-du-8Ag"/>
+                                <constraint firstItem="OPh-Fb-X4M" firstAttribute="leading" secondItem="vjc-ZI-J2c" secondAttribute="leading" constant="8" id="dWb-GT-nqu"/>
+                                <constraint firstItem="OPh-Fb-X4M" firstAttribute="top" secondItem="vjc-ZI-J2c" secondAttribute="top" constant="8" id="m75-9L-krN"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TripCell" id="eKq-gx-8ly" customClass="TripTableViewCell" customModule="LambdaBucketList" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eKq-gx-8ly" id="1yx-2m-2tG">
+                                    <rect key="frame" x="0.0" y="0.0" width="376" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MmQ-TI-tfB">
+                                            <rect key="frame" x="8" y="8" width="360" height="27.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odo-K1-zuZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="324.5" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67L-4N-qu9">
+                                                    <rect key="frame" x="332.5" y="0.0" width="27.5" height="27.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="67L-4N-qu9" secondAttribute="height" multiplier="1:1" id="Cs6-LC-4uP"/>
+                                                    </constraints>
+                                                    <state key="normal" image="unchecked"/>
+                                                    <connections>
+                                                        <action selector="completedButtonTapped:" destination="eKq-gx-8ly" eventType="touchUpInside" id="gB0-ex-ncy"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="MmQ-TI-tfB" firstAttribute="leading" secondItem="1yx-2m-2tG" secondAttribute="leading" constant="8" id="FcF-FB-rjQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="MmQ-TI-tfB" secondAttribute="trailing" constant="8" id="Oce-6A-T2R"/>
+                                        <constraint firstItem="MmQ-TI-tfB" firstAttribute="top" secondItem="1yx-2m-2tG" secondAttribute="top" constant="8" id="XGW-Bq-Xwk"/>
+                                        <constraint firstAttribute="bottom" secondItem="MmQ-TI-tfB" secondAttribute="bottom" constant="8" id="okQ-ev-cbt"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="completedButton" destination="67L-4N-qu9" id="ykI-Ke-nyb"/>
+                                    <outlet property="messageLabel" destination="odo-K1-zuZ" id="Zwz-nW-bWZ"/>
+                                    <segue destination="aX0-cv-N7E" kind="show" id="sgd-fg-Ice"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MxV-wG-Ysk" id="hld-dQ-O2U"/>
+                            <outlet property="delegate" destination="MxV-wG-Ysk" id="8yS-dG-UMx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Bucket List" id="nU3-hb-vM0"/>
+                    <connections>
+                        <outlet property="createTripTextField" destination="OPh-Fb-X4M" id="lNf-1n-Zsy"/>
+                        <segue destination="qAg-oH-V0S" kind="presentation" identifier="signInModalSegue" id="0S9-lm-UxR"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LuO-Zr-dhZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2138" y="-227"/>
+            <point key="canvasLocation" x="1560.8695652173915" y="-932.14285714285711"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ubq-aE-gFR">
+            <objects>
+                <navigationController id="7It-eu-oPn" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="XCO-Vg-rsc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="MxV-wG-Ysk" kind="relationship" relationship="rootViewController" id="G0k-nz-BFa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dbf-36-3hP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="738" y="-932"/>
+        </scene>
+        <!--BucketListPosts-->
+        <scene sceneID="gAy-BW-WMi">
+            <objects>
+                <viewControllerPlaceholder storyboardName="BucketListPosts" id="aX0-cv-N7E" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sMu-ZH-ayC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2160" y="-932"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="9ye-Np-wjh"/>
-    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="unchecked" width="50" height="50"/>
+    </resources>
 </document>

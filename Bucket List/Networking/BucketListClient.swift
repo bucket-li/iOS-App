@@ -29,6 +29,16 @@ class BucketListClient {
     private let baseURL = URL(string: "https://bucket-list-be.herokuapp.com/")!
     var token: Token?
     
+    private (set) var items: [Item] = []
+    
+    var completedItems: [Item] {
+        return self.items.filter { $0.completed == true }
+    }
+    
+    var notCompletedItems: [Item] {
+        return self.items.filter { $0.completed == false }
+    }
+    
     func register(withName name: String, withEmail email: String, withPassword password: String, completion: @escaping CompletionHandler = { _ in }) {
         let registerURL = baseURL.appendingPathComponent("api/register")
         
