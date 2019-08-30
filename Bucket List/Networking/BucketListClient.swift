@@ -26,6 +26,10 @@ enum NetworkError: Error {
 class BucketListClient {
     typealias CompletionHandler = (Error?) -> Void
     
+    init() {
+        self.loadFromPersistentStore()
+    }
+    
     private let baseURL = URL(string: "https://bucket-list-be.herokuapp.com/")!
     var token: Token?
     
@@ -37,6 +41,13 @@ class BucketListClient {
     
     var notCompletedItems: [Item] {
         return self.items.filter { $0.completed == false }
+    }
+    
+    private var persistentFileURL: URL? {
+        let fileManager = FileManager.default
+        guard let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
+        
+        return documentsDirectory.appendingPathComponent("bucketlist.plist")
     }
     
     func register(withName name: String, withEmail email: String, withPassword password: String, completion: @escaping CompletionHandler = { _ in }) {
@@ -399,36 +410,42 @@ class BucketListClient {
         }.resume()
     }
     
-    func createItem(withUserId userId: Int, withDescription description: String, withCompleted completed: Bool = false, completion: @escaping CompletionHandler = { _ in }) {
-        guard let token = self.token else { completion(NSError()); return }
-        
-        let requestURL = baseURL.appendingPathComponent("api/item")
-        
-        var request = URLRequest(url: requestURL)
-        request.httpMethod = HTTPMethod.post.rawValue
-        request.addValue(token.token, forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        do {
-            let userParams = ["user_id": userId, "completed": completed, "description": description] as [String: Any]
-            let json = try JSONSerialization.data(withJSONObject: userParams, options: .prettyPrinted)
-            request.httpBody = json
-        } catch {
-            print("Error encoding item object: \(error)")
-        }
-        
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let response = response as? HTTPURLResponse,
-                response.statusCode != 200 {
-                completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
-                print(response)
-                return
-            }
-            
-            if let error = error { completion(error); return }
-            completion(nil)
-        }.resume()
+    func createItem(withUserId userId: Int, withDescription description: String, withId id: UUID = UUID(), withCompleted completed: Bool = false, created: Date = Date()) {
+        let item = Item(id: id, userId: userId, completed: completed, description: description, created: created)
+        self.items.append(item)
+        self.saveToPersistentStore()
     }
+    
+//    func createItem(withUserId userId: Int, withDescription description: String, withCompleted completed: Bool = false, completion: @escaping CompletionHandler = { _ in }) {
+//        guard let token = self.token else { completion(NSError()); return }
+//
+//        let requestURL = baseURL.appendingPathComponent("api/item")
+//
+//        var request = URLRequest(url: requestURL)
+//        request.httpMethod = HTTPMethod.post.rawValue
+//        request.addValue(token.token, forHTTPHeaderField: "Authorization")
+//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//
+//        do {
+//            let userParams = ["user_id": userId, "completed": completed, "description": description] as [String: Any]
+//            let json = try JSONSerialization.data(withJSONObject: userParams, options: .prettyPrinted)
+//            request.httpBody = json
+//        } catch {
+//            print("Error encoding item object: \(error)")
+//        }
+//
+//        URLSession.shared.dataTask(with: request) { (data, response, error) in
+//            if let response = response as? HTTPURLResponse,
+//                response.statusCode != 200 {
+//                completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
+//                print(response)
+//                return
+//            }
+//
+//            if let error = error { completion(error); return }
+//            completion(nil)
+//        }.resume()
+//    }
     
     func createItemPost(withItemId itemId: Int, withMessage message: String, completion: @escaping CompletionHandler = { _ in }) {
         guard let token = self.token else { completion(NSError()); return }
@@ -490,35 +507,40 @@ class BucketListClient {
         }.resume()
     }
     
-    func updateItem(withItemId itemId: Int, withDescription description: String, withCompleted completed: Bool = false, completion: @escaping CompletionHandler = { _ in }) {
-        guard let token = self.token else { completion(NSError()); return }
-        
-        let requestURL = baseURL.appendingPathComponent("api/item/\(itemId)")
-        
-        var request = URLRequest(url: requestURL)
-        request.httpMethod = HTTPMethod.put.rawValue
-        request.addValue(token.token, forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        do {
-            let userParams = ["completed": completed, "description": description] as [String: Any]
-            let json = try JSONSerialization.data(withJSONObject: userParams, options: .prettyPrinted)
-            request.httpBody = json
-        } catch {
-            print("Error encoding item object: \(error)")
-        }
-        
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let response = response as? HTTPURLResponse,
-                response.statusCode != 200 {
-                completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
-                return
-            }
-            
-            if let error = error { completion(error); return }
-            completion(nil)
-        }.resume()
+    func toggleItemCompletion(_ item: Item) {
+        guard let index = self.items.firstIndex(of: item) else { return }
+        self.items[index].completed = !self.items[index].completed
     }
+    
+//    func updateItem(withItemId itemId: UUID, withDescription description: String, withCompleted completed: Bool = false, completion: @escaping CompletionHandler = { _ in }) {
+//        guard let token = self.token else { completion(NSError()); return }
+//
+//        let requestURL = baseURL.appendingPathComponent("api/item/\(itemId)")
+//
+//        var request = URLRequest(url: requestURL)
+//        request.httpMethod = HTTPMethod.put.rawValue
+//        request.addValue(token.token, forHTTPHeaderField: "Authorization")
+//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//
+//        do {
+//            let userParams = ["completed": completed, "description": description] as [String: Any]
+//            let json = try JSONSerialization.data(withJSONObject: userParams, options: .prettyPrinted)
+//            request.httpBody = json
+//        } catch {
+//            print("Error encoding item object: \(error)")
+//        }
+//
+//        URLSession.shared.dataTask(with: request) { (data, response, error) in
+//            if let response = response as? HTTPURLResponse,
+//                response.statusCode != 200 {
+//                completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
+//                return
+//            }
+//
+//            if let error = error { completion(error); return }
+//            completion(nil)
+//        }.resume()
+//    }
     
     func updateItemPost(withPostId postId: Int, withItemId itemId: Int, withMessage message: String, completion: @escaping CompletionHandler = { _ in }) {
         guard let token = self.token else { completion(NSError()); return }
@@ -580,27 +602,33 @@ class BucketListClient {
         }.resume()
     }
     
-    func deleteItem(withItemId itemId: Int, completion: @escaping CompletionHandler = { _ in }) {
-        guard let token = self.token else { completion(NSError()); return }
-        
-        let requestURL = baseURL.appendingPathComponent("api/item/\(itemId)")
-        
-        var request = URLRequest(url: requestURL)
-        request.httpMethod = HTTPMethod.delete.rawValue
-        request.addValue(token.token, forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let response = response as? HTTPURLResponse,
-                response.statusCode != 200 {
-                completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
-                return
-            }
-            
-            if let error = error { completion(error); return }
-            completion(nil)
-        }.resume()
+    func deleteItem(_ item: Item) {
+        guard let index = self.items.firstIndex(of: item) else { return }
+        self.items.remove(at: index)
+        self.saveToPersistentStore()
     }
+    
+//    func deleteItem(withItemId itemId: UUID, completion: @escaping CompletionHandler = { _ in }) {
+//        guard let token = self.token else { completion(NSError()); return }
+//
+//        let requestURL = baseURL.appendingPathComponent("api/item/\(itemId)")
+//
+//        var request = URLRequest(url: requestURL)
+//        request.httpMethod = HTTPMethod.delete.rawValue
+//        request.addValue(token.token, forHTTPHeaderField: "Authorization")
+//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//
+//        URLSession.shared.dataTask(with: request) { (data, response, error) in
+//            if let response = response as? HTTPURLResponse,
+//                response.statusCode != 200 {
+//                completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
+//                return
+//            }
+//
+//            if let error = error { completion(error); return }
+//            completion(nil)
+//        }.resume()
+//    }
     
     func deleteItemPost(withPostId postId: Int, completion: @escaping CompletionHandler = { _ in }) {
         guard let token = self.token else { completion(NSError()); return }
@@ -644,5 +672,33 @@ class BucketListClient {
             if let error = error { completion(error); return }
             completion(nil)
         }.resume()
+    }
+    
+    // Saving
+    func saveToPersistentStore() {
+        guard let url = self.persistentFileURL else { return }
+        
+        do {
+            let encoder = PropertyListEncoder()
+            let data = try encoder.encode(self.items)
+            try data.write(to: url)
+        } catch {
+            NSLog("Error saving stars data: \(error)")
+        }
+    }
+    
+    // Loading
+    func loadFromPersistentStore() {
+        let fileManager = FileManager.default
+        guard let url = self.persistentFileURL,
+            fileManager.fileExists(atPath: url.path) else { return }
+        
+        do {
+            let data = try Data(contentsOf: url)
+            let decoder = PropertyListDecoder()
+            self.items = try decoder.decode([Item].self, from: data)
+        } catch {
+            NSLog("Error loading stars data: \(error)")
+        }
     }
 }

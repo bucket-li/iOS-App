@@ -73,7 +73,7 @@ class BucketListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let item = itemFor(indexPath: indexPath)
-            self.bucketListClient.deleteItem(withItemId: item.id)
+            self.bucketListClient.deleteItem(item)
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.reloadData()
         }
@@ -83,16 +83,19 @@ class BucketListTableViewController: UITableViewController {
         guard let message = self.createTripTextField.text,
             let user = self.user else { return }
         
-        self.bucketListClient.createItem(withUserId: user.id, withDescription: message) { (error) in
-            if let error = error {
-                NSLog("Error creating your Trip: \(error)")
-            }
-            
-            DispatchQueue.main.async {
-                self.createTripTextField.text = nil
-                self.tableView.reloadData()
-            }
-        }
+        self.bucketListClient.createItem(withUserId: user.id, withDescription: message, withId: UUID())
+        self.createTripTextField.text = nil
+        self.tableView.reloadData()
+//        self.bucketListClient.createItem(withUserId: user.id, withDescription: message, withId: UUID()) { (error) in
+//            if let error = error {
+//                NSLog("Error creating your Trip: \(error)")
+//            }
+//
+//            DispatchQueue.main.async {
+//                self.createTripTextField.text = nil
+//                self.tableView.reloadData()
+//            }
+//        }
     }
     
     private func itemFor(indexPath: IndexPath) -> Item {
@@ -118,7 +121,7 @@ extension BucketListTableViewController: TripTableViewCellDelegate {
         guard let indexPath = self.tableView.indexPath(for: cell) else { return }
         
         let item = itemFor(indexPath: indexPath)
-        self.bucketListClient.updateItem(withItemId: item.id, withDescription: item.description, withCompleted: !item.completed)
+        self.bucketListClient.toggleItemCompletion(item)
         
         self.tableView.reloadData()
     }

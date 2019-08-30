@@ -9,9 +9,9 @@
 import Foundation
 
 struct Item: Equatable, Codable {
-    var id: Int
+    var id: UUID
     var userId: Int
     var completed: Bool
     var description: String
-    var created: String
+    var created: Date
 }
