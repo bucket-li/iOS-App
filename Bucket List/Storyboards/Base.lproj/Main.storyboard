@@ -93,7 +93,7 @@
                                 <connections>
                                     <outlet property="completedButton" destination="67L-4N-qu9" id="ykI-Ke-nyb"/>
                                     <outlet property="messageLabel" destination="odo-K1-zuZ" id="Zwz-nW-bWZ"/>
-                                    <segue destination="aX0-cv-N7E" kind="show" id="sgd-fg-Ice"/>
+                                    <segue destination="aX0-cv-N7E" kind="show" identifier="BucketListPostsSegue" id="sgd-fg-Ice"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -140,4 +140,5 @@
     <resources>
         <image name="unchecked" width="50" height="50"/>
     </resources>
+    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

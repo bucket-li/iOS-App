@@ -35,7 +35,7 @@
                             <outlet property="delegate" destination="TiB-Mh-X3Y" id="tUD-K9-OKG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Trip" id="jIv-WU-5M8"/>
+                    <navigationItem key="navigationItem" title="Trip" id="6SM-O1-Jo0"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ptF-IX-qvj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

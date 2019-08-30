@@ -9,15 +9,17 @@
 import UIKit
 
 class BucketListPostTableViewController: UITableViewController {
+    
+    var bucketListClient: BucketListClient?
+    var item: Item?  {
+        didSet {
+            self.updateViews()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.updateViews()
     }
 
     // MARK: - Table view data source
@@ -86,5 +88,11 @@ class BucketListPostTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    private func updateViews() {
+        guard let item = self.item, isViewLoaded else { return }
+        
+        self.title = item.description
+    }
 
 }

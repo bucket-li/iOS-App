@@ -112,6 +112,12 @@ class BucketListTableViewController: UITableViewController {
         if segue.identifier == "signInModalSegue" {
             guard let loginVC = segue.destination as? SignInViewController else { return }
             loginVC.bucketListClient = self.bucketListClient
+        } else if segue.identifier == "BucketListPostsSegue" {
+            guard let indexPath = tableView.indexPathForSelectedRow,
+                let blptVC = segue.destination as? BucketListPostTableViewController else { return }
+            blptVC.bucketListClient = self.bucketListClient
+            let item = itemFor(indexPath: indexPath)
+            blptVC.item = item
         }
     }
 }

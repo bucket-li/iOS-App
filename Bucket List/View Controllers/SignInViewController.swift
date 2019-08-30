@@ -12,8 +12,8 @@ class SignInViewController: UIViewController {
     
     var bucketListClient: BucketListClient?
     
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet var emailTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var signInButton: UIButton!
     @IBOutlet var registerButton: UIButton!
 
@@ -58,7 +58,6 @@ class SignInViewController: UIViewController {
         self.signInButton.layer.cornerRadius = 5
         self.registerButton.layer.cornerRadius = 5
     }
-    
 
     // MARK: - Navigation
 
@@ -88,9 +87,4 @@ class SignInViewController: UIViewController {
             }
         }
     }
-    
-    
-    
-    
-
 }
